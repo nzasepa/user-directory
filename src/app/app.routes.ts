@@ -5,9 +5,5 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'users',
     pathMatch: 'full'
-  },
-  // {
-  //   path: 'users',
-  //   component: 
-  // }
+  }
 ]
