@@ -1,0 +1,80 @@
+:host {
+  display: block;
+  width: 350px;
+  background-color: #342f3a;
+}
+
+.logo {
+  padding: 30px;
+  font-size: 20px;
+  font-weight: 900;
+  background-color: #2b2731;
+
+  &::after {
+    content: ' ';
+    display: table;
+    clear: both;
+  }
+
+  div {
+    position: relative;
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 15px; 
+    background-color: #d03232;
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  span {
+    float: left;
+    margin-left: 15px;
+    padding: 15px 0;
+    color: #ffffff;
+    line-height: 30px;
+  }
+}
+
+.divider {
+  height: 1px;
+  margin: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu {
+  padding: 40px 0 0;
+}
+
+.placeholder-list {
+  margin: 0;
+  padding: 0 30px;
+
+  li {
+    display: block;
+    height: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.25);
+    list-style: none;
+
+    &.long {
+      width: 80%;
+    }
+
+    &.short {
+      width: 60%;
+    }
+  }
+}
