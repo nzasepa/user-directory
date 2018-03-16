@@ -1,1 +1,23 @@
-List
+<content-component>
+  <data-table>
+    <data-table-header>
+      <data-table-header-cell>General</data-table-header-cell>
+      <data-table-header-cell>Company</data-table-header-cell>
+      <data-table-header-cell>Registered</data-table-header-cell>
+      <data-table-header-cell>Balance</data-table-header-cell>
+    </data-table-header>
+
+    <data-table-row *ngFor="let user of usersStore.users$ | async">
+      <data-table-cell class="user-general">
+        <user-avatar [avatarUrl]="user.picture" [isActive]="user.isActive"></user-avatar>
+        <div class="user-meta">
+          <h3>{{ user.name.first + ' ' + user.name.last }}</h3>
+          <h4>{{ user.email }}</h4>
+        </div>
+      </data-table-cell>
+      <data-table-cell class="user-company">{{ user.company }}</data-table-cell>
+      <data-table-cell class="user-registered">{{ user.registered }}</data-table-cell>
+      <data-table-cell class="user-balance">{{ user.balance }}</data-table-cell>
+    </data-table-row>
+  </data-table>
+</content-component>

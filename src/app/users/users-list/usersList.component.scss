@@ -1,0 +1,27 @@
+data-table-row {
+  cursor: pointer;
+}
+
+.user-general {
+  user-avatar {
+    float: left;
+    margin-top: 4px;
+  }
+
+  .user-meta {
+    float: left;
+    margin-left: 15px;
+
+    h3 {
+      margin: 0 0 3px;
+      font-size: 16px;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 400;
+      color: #828282;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import { UserInterface } from '../interfaces/user.interface';
 
 @Injectable()
 export class UsersService {
@@ -12,8 +13,8 @@ export class UsersService {
     this._http = http;
   }
 
-  fetchUsers(): Observable<any> {
-    return this._http.get(`${window.location.protocol}//${window.location.host}/mockData.json`)
+  fetchUsers(): Observable<Array<UserInterface>> {
+    return this._http.get<Array<UserInterface>>(`${window.location.protocol}//${window.location.host}/mockData.json`)
       .pipe(
         catchError((err) => {
           console.error('[UsersService Error]', err);

@@ -16,5 +16,6 @@ main {
   float: left;
   height: 100vh;
   width: calc(100% - 350px);
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

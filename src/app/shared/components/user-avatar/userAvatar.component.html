@@ -1,0 +1,4 @@
+<div class="avatar-container">
+  <img [src]="avatarUrl" alt="user avatar" />
+</div>
+<div class="status" [ngClass]="{ 'active': isActive, 'inactive': !isActive }"></div>
