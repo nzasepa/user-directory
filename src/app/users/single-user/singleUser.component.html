@@ -1,0 +1,11 @@
+<content-component>
+  <div *ngIf="user; then userProfile; else userNotFound"></div>
+</content-component>
+
+<ng-template #userProfile>
+  {{ user.email }}
+</ng-template>
+
+<ng-template #userNotFound>
+  Not found
+</ng-template>

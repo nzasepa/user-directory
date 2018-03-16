@@ -7,11 +7,13 @@ import { usersRoutes } from './users.routes';
 import { UsersComponent } from './users.component';
 import { UsersListComponent } from './users-list/usersList.component';
 import { SharedModule } from '../shared/shared.module';
+import { SingleUserComponent } from './single-user/singleUser.component';
 
 @NgModule({
   declarations: [
     UsersComponent,
-    UsersListComponent
+    UsersListComponent,
+    SingleUserComponent
   ],
   imports: [
     CommonModule,

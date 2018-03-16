@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { UsersListComponent } from './users-list/usersList.component';
 import { UsersComponent } from './users.component';
+import { SingleUserComponent } from './single-user/singleUser.component';
 
 export const usersRoutes: Routes = [
   {
@@ -15,6 +16,10 @@ export const usersRoutes: Routes = [
       {
         path: 'list',
         component: UsersListComponent
+      },
+      {
+        path: ':email',
+        component: SingleUserComponent
       }
     ]
   }

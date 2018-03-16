@@ -7,7 +7,7 @@
       <data-table-header-cell>Balance</data-table-header-cell>
     </data-table-header>
 
-    <data-table-row *ngFor="let user of usersStore.users$ | async">
+    <data-table-row *ngFor="let user of usersStore.users$ | async" [routerLink]="['../', user.email]">
       <data-table-cell class="user-general">
         <user-avatar [avatarUrl]="user.picture" [isActive]="user.isActive"></user-avatar>
         <div class="user-meta">
