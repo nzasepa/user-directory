@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/map';
 import { UserInterface } from '../../interfaces/user.interface';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'single-user',
@@ -15,8 +16,12 @@ import { UserInterface } from '../../interfaces/user.interface';
 export class SingleUserComponent extends SubscriberComponent {
   user: UserInterface
 
-  constructor(activatedRoute: ActivatedRoute, usersStore: UsersStore) {
+  private _titleService: Title;
+
+  constructor(titleService: Title, activatedRoute: ActivatedRoute, usersStore: UsersStore) {
     super();
+
+    this._titleService = titleService;
 
     this.subscriptions.push(
       Observable.combineLatest(
@@ -28,5 +33,11 @@ export class SingleUserComponent extends SubscriberComponent {
 
   private _setUser(userEmail: string, users: Array<UserInterface>): void {
     this.user = users.filter((user: UserInterface) => user.email === userEmail)[0];
+
+    if (this.user) {
+      this._titleService.setTitle(`${this.user.name.first} ${this.user.name.last} | User directory`);
+    } else {
+      this._titleService.setTitle(`Not found | User directory`);
+    }
   }
 }
