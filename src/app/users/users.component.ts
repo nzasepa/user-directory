@@ -5,9 +5,7 @@ import { UserInterface } from '../interfaces/user.interface';
 
 @Component({
   selector: 'ud-users-component',
-  template: `
-    <router-outlet></router-outlet>
-  `
+  templateUrl: './users.component.html'
 })
 export class UsersComponent implements OnInit {
   private _usersStore: UsersStore;

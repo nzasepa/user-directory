@@ -15,7 +15,6 @@ import { UsersModule } from './users/users.module';
     CoreModule.forRoot(),
     SharedModule,
     AppRoutingModule,
-    MainModule,
     UsersModule.forRoot()
   ],
   bootstrap: [AppComponent]

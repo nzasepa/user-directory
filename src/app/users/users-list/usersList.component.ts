@@ -30,17 +30,12 @@ export class UsersListComponent implements OnInit {
     this._initListControls();
   }
 
-  get sortByValue(): string {
-    return this.listControls.get('sortBy').value;
-  }
-
   get searchValue(): string {
     return this.listControls.get('search').value;
   }
 
   private _initListControls(): void {
     this.listControls = this._formBuilder.group({
-      sortBy: ['status'],
       search: ['']
     });
   }

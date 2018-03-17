@@ -5,7 +5,7 @@
 }
 
 .logo {
-  padding: 30px;
+  padding: 30px 15px;
   font-size: 20px;
   font-weight: 900;
   background-color: #2b2731;
@@ -51,30 +51,4 @@
   height: 1px;
   margin: 30px;
   background-color: rgba(255, 255, 255, 0.1);
-}
-
-.menu {
-  padding: 40px 0 0;
-}
-
-.placeholder-list {
-  margin: 0;
-  padding: 0 30px;
-
-  li {
-    display: block;
-    height: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.25);
-    list-style: none;
-
-    &.long {
-      width: 80%;
-    }
-
-    &.short {
-      width: 60%;
-    }
-  }
 }
