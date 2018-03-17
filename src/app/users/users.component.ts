@@ -44,4 +44,9 @@ export class UsersComponent extends SubscriberComponent implements OnInit {
   onUserSelected($event: boolean): void {
     this.sidebarOpen = false;
   }
+
+  onOpenSidebar($event: MouseEvent): void {
+    $event.preventDefault();
+    this.sidebarOpen = true;
+  }
 }
