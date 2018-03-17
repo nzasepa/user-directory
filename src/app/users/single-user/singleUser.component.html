@@ -1,20 +1,16 @@
-<content-header-component>
+<ud-content-header-component>
   <a class="icon-link" [routerLink]="['/users', 'list']">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 341.333 341.333">
       <path d="M341.333 149.333H81.707L200.853 30.187 170.667 0 0 170.667l170.667 170.666 30.186-30.186L81.707 192h259.626z"/>
     </svg>
     <span>Go back</span>
   </a>
-</content-header-component>
+</ud-content-header-component>
 
-<content-component>
-  <ng-container *ngIf="user; then userProfile; else userNotFound"></ng-container>
-</content-component>
-
-<ng-template #userProfile>
-  <div class="user-profile">
+<ud-content-component>
+  <div *ngIf="user" class="user-profile">
     <header>
-      <user-avatar [avatarUrl]="user.picture" [isActive]="user.isActive"></user-avatar>
+      <ud-user-avatar [avatarUrl]="user.picture" [isActive]="user.isActive"></ud-user-avatar>
       <h3>{{ user.name.first + ' ' + user.name.last }} <span>({{ user.company }})</span></h3>
     </header>
     <div class="content">
@@ -67,8 +63,4 @@
       </div>
     </div>
   </div>
-</ng-template>
-
-<ng-template #userNotFound>
-  
-</ng-template>
+</ud-content-component>

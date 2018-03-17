@@ -10,12 +10,12 @@ describe('MainComponent', () => {
         SidebarComponent
       ]
     }).compileComponents();
-  }))
+  }));
 
   it('should render main component', async(() => {
     const fixture = TestBed.createComponent(MainComponent);
     const component = fixture.debugElement.componentInstance;
 
     expect(component).toBeTruthy();
-  }))
+  }));
 });

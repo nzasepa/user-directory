@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'user-not-found',
+  selector: 'ud-user-not-found',
   templateUrl: './userNotFound.component.html',
   styleUrls: ['./userNotFound.component.scss']
 })
-export class UserNotFoundComponent {
+export class UserNotFoundComponent implements OnInit {
   private _titleService: Title;
 
   constructor(titleService: Title) {

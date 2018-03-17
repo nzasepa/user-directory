@@ -1,7 +1,7 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'user-avatar',
+  selector: 'ud-user-avatar',
   templateUrl: './userAvatar.component.html',
   styleUrls: ['./userAvatar.component.scss']
 })

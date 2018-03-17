@@ -7,7 +7,7 @@ import { UserInterface } from '../interfaces/user.interface';
 
 @Injectable()
 export class UsersService {
-  private _http: HttpClient
+  private _http: HttpClient;
 
   constructor(http: HttpClient) {
     this._http = http;
@@ -18,8 +18,8 @@ export class UsersService {
       .pipe(
         catchError((err) => {
           console.error('[UsersService Error]', err);
-          return Observable.of(new Array())
+          return Observable.of(new Array());
         })
-      )
+      );
   }
 }

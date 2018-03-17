@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'data-table',
+  selector: 'ud-data-table',
   template: '<ng-content></ng-content>',
   styleUrls: ['./dataTable.component.scss']
 })

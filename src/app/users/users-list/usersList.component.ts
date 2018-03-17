@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'users-list',
+  selector: 'ud-users-list',
   templateUrl: './usersList.component.html',
   styleUrls: ['./usersList.component.scss']
 })

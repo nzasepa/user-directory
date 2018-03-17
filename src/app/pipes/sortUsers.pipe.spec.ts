@@ -34,18 +34,18 @@ describe('SearchUsersPipe', () => {
   );
 
   it('should return "Test" as first result for sort by name', () => {
-    expect(pipe.transform(mockData as Array<UserInterface>, 'name')[0].name.first).toEqual('Test')
-  })
+    expect(pipe.transform(mockData as Array<UserInterface>, 'name')[0].name.first).toEqual('Test');
+  });
 
   it('should return "Test123" as first result for sort by status', () => {
-    expect(pipe.transform(mockData as Array<UserInterface>, 'status')[0].name.first).toEqual('Test123')
-  })
+    expect(pipe.transform(mockData as Array<UserInterface>, 'status')[0].name.first).toEqual('Test123');
+  });
 
   it('should return "Test123" as first result for sort by company', () => {
-    expect(pipe.transform(mockData as Array<UserInterface>, 'company')[0].name.first).toEqual('Test123')
-  })
+    expect(pipe.transform(mockData as Array<UserInterface>, 'company')[0].name.first).toEqual('Test123');
+  });
 
   it('should return "Test" as first result for sort by email', () => {
-    expect(pipe.transform(mockData as Array<UserInterface>, 'email')[0].name.first).toEqual('Test')
-  })
+    expect(pipe.transform(mockData as Array<UserInterface>, 'email')[0].name.first).toEqual('Test');
+  });
 });

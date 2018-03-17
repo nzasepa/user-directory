@@ -8,12 +8,12 @@ describe('DataTableHeaderComponent', () => {
         DataTableHeaderComponent
       ]
     }).compileComponents();
-  }))
+  }));
 
   it('should render data table header component', async(() => {
     const fixture = TestBed.createComponent(DataTableHeaderComponent);
     const component = fixture.debugElement.componentInstance;
 
     expect(component).toBeTruthy();
-  }))
+  }));
 });

@@ -8,12 +8,12 @@ describe('ContentComponent', () => {
         ContentComponent
       ]
     }).compileComponents();
-  }))
+  }));
 
   it('should render content component', async(() => {
     const fixture = TestBed.createComponent(ContentComponent);
     const component = fixture.debugElement.componentInstance;
 
     expect(component).toBeTruthy();
-  }))
+  }));
 });

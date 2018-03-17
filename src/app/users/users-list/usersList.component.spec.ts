@@ -24,12 +24,12 @@ describe('UsersListComponent', () => {
         Title
       ]
     }).compileComponents();
-  }))
+  }));
 
   it('should render users list component', async(() => {
     const fixture = TestBed.createComponent(UsersListComponent);
     const component = fixture.debugElement.componentInstance;
 
     expect(component).toBeTruthy();
-  }))
+  }));
 });

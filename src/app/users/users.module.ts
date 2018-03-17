@@ -35,6 +35,6 @@ export class UsersModule {
         UsersStore,
         UsersService
       ]
-    }
+    };
   }
 }

@@ -8,12 +8,12 @@ describe('SidebarComponent', () => {
         SidebarComponent
       ]
     }).compileComponents();
-  }))
+  }));
 
   it('should render sidebar component', async(() => {
     const fixture = TestBed.createComponent(SidebarComponent);
     const component = fixture.debugElement.componentInstance;
 
     expect(component).toBeTruthy();
-  }))
+  }));
 });

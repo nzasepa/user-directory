@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'content-component',
+  selector: 'ud-content-component',
   template: `
     <ng-content></ng-content>
   `,

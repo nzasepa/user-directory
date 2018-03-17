@@ -8,12 +8,12 @@ describe('ContentHeaderComponent', () => {
         ContentHeaderComponent
       ]
     }).compileComponents();
-  }))
+  }));
 
   it('should render content header component', async(() => {
     const fixture = TestBed.createComponent(ContentHeaderComponent);
     const component = fixture.debugElement.componentInstance;
 
     expect(component).toBeTruthy();
-  }))
+  }));
 });

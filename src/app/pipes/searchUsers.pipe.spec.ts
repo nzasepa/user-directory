@@ -31,10 +31,10 @@ describe('SearchUsersPipe', () => {
   );
 
   it('should return 1 result for search "test123"', () => {
-    expect(pipe.transform(mockData as Array<UserInterface>, 'test123').length).toEqual(1)
-  })
+    expect(pipe.transform(mockData as Array<UserInterface>, 'test123').length).toEqual(1);
+  });
 
   it('should return 3 results for search "test"', () => {
-    expect(pipe.transform(mockData as Array<UserInterface>, 'test').length).toEqual(3)
-  })
+    expect(pipe.transform(mockData as Array<UserInterface>, 'test').length).toEqual(3);
+  });
 });

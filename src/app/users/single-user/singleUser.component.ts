@@ -10,7 +10,7 @@ import { Title } from '@angular/platform-browser';
 import {} from '@types/googlemaps';
 
 @Component({
-  selector: 'single-user',
+  selector: 'ud-single-user',
   templateUrl: './singleUser.component.html',
   styleUrls: ['./singleUser.component.scss']
 })
@@ -38,7 +38,7 @@ export class SingleUserComponent extends SubscriberComponent {
       )
       .filter((values) => values.every(Boolean))
       .subscribe(([userEmail, users]) => this._setUser(userEmail, users))
-    )
+    );
   }
 
   private _setUser(userEmail: string, users: Array<UserInterface>): void {
@@ -59,29 +59,29 @@ export class SingleUserComponent extends SubscriberComponent {
     let centerPosition;
 
     if (!isNaN(lat) && !isNaN(lng)) {
-      centerPosition = new google.maps.LatLng(lat, lng)
+      centerPosition = new google.maps.LatLng(lat, lng);
 
       this._map = new google.maps.Map(this.mapElement.nativeElement, {
         zoom: 5,
         center: centerPosition
-      })
+      });
 
       this._mapMarker = new google.maps.Marker({
         position: centerPosition,
         map: this._map
-      })
+      });
 
       this._markerInfo = new google.maps.InfoWindow({
         content: this._markerInfoContent
-      })
+      });
 
       this._mapMarker.addListener('click', () => {
         this._markerInfo.open(this._map, this._mapMarker);
-      })
+      });
 
       google.maps.event.addListenerOnce(this._map, 'tilesloaded', () => {
         this._markerInfo.open(this._map, this._mapMarker);
-      })
+      });
     }
   }
 

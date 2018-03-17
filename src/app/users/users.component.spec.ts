@@ -20,12 +20,12 @@ describe('UsersComponent', () => {
         UsersStore
       ]
     }).compileComponents();
-  }))
+  }));
 
   it('should render users component', async(() => {
     const fixture = TestBed.createComponent(UsersComponent);
     const component = fixture.debugElement.componentInstance;
 
     expect(component).toBeTruthy();
-  }))
+  }));
 });

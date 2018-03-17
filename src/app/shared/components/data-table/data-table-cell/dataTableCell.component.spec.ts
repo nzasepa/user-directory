@@ -8,12 +8,12 @@ describe('DataTableCellComponent', () => {
         DataTableCellComponent
       ]
     }).compileComponents();
-  }))
+  }));
 
   it('should render data table cell component', async(() => {
     const fixture = TestBed.createComponent(DataTableCellComponent);
     const component = fixture.debugElement.componentInstance;
 
     expect(component).toBeTruthy();
-  }))
+  }));
 });

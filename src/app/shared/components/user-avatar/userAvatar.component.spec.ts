@@ -9,14 +9,14 @@ describe('UserAvatarComponent', () => {
         UserAvatarComponent
       ]
     }).compileComponents();
-  }))
+  }));
 
   it('should render user avatar component', async(() => {
     const fixture = TestBed.createComponent(UserAvatarComponent);
     const component = fixture.debugElement.componentInstance;
 
     expect(component).toBeTruthy();
-  }))
+  }));
 
   it('should display image from input', async(() => {
     const fixture = TestBed.createComponent(UserAvatarComponent);
@@ -29,7 +29,7 @@ describe('UserAvatarComponent', () => {
     userAvatarImage = fixture.debugElement.query(By.css('img')).nativeElement;
 
     expect(userAvatarImage.src).toBe('http://placehold.it/32x32');
-  }))
+  }));
 
   it('should display active status', async(() => {
     const fixture = TestBed.createComponent(UserAvatarComponent);
@@ -42,7 +42,7 @@ describe('UserAvatarComponent', () => {
     userStatus = fixture.debugElement.query(By.css('.status')).nativeElement;
 
     expect(userStatus.className).toEqual('status active');
-  }))
+  }));
 
   it('should display inactive status', async(() => {
     const fixture = TestBed.createComponent(UserAvatarComponent);
@@ -55,5 +55,5 @@ describe('UserAvatarComponent', () => {
     userStatus = fixture.debugElement.query(By.css('.status')).nativeElement;
 
     expect(userStatus.className).toEqual('status inactive');
-  }))
+  }));
 });

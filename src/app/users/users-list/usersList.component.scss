@@ -1,11 +1,11 @@
 @import '../../../assets/scss/mixins.scss';
 
-content-header-component {
+ud-content-header-component {
   height: 40px;
   margin-top: 60px;
 }
 
-content-component {
+ud-content-component {
   margin-top: 15px;
   margin-bottom: 80px;
 }
@@ -56,12 +56,12 @@ content-component {
   }
 }
 
-data-table-row {
+ud-data-table-row {
   cursor: pointer;
 }
 
 .user-general {
-  user-avatar {
+  ud-user-avatar {
     float: left;
     margin-top: 4px;
   }

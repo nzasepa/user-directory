@@ -7,6 +7,6 @@ export class UsersStore {
   users$: BehaviorSubject<Array<UserInterface>>;
 
   constructor() {
-    this.users$ = new BehaviorSubject<Array<UserInterface>>(null)
+    this.users$ = new BehaviorSubject<Array<UserInterface>>(null);
   }
 }

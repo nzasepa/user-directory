@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it('should render app component', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const appComponent = fixture.debugElement.componentInstance;
-    
+
     expect(appComponent).toBeTruthy();
   }));
 });

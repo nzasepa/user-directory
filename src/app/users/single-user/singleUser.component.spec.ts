@@ -20,12 +20,12 @@ describe('SingleUserComponent', () => {
         Title
       ]
     }).compileComponents();
-  }))
+  }));
 
   it('should render single user component', async(() => {
     const fixture = TestBed.createComponent(SingleUserComponent);
     const component = fixture.debugElement.componentInstance;
 
     expect(component).toBeTruthy();
-  }))
+  }));
 });

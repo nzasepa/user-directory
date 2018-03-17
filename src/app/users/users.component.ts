@@ -4,7 +4,7 @@ import { UsersService } from './users.service';
 import { UserInterface } from '../interfaces/user.interface';
 
 @Component({
-  selector: 'users-component',
+  selector: 'ud-users-component',
   template: `
     <router-outlet></router-outlet>
   `
@@ -20,6 +20,6 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this._usersService.fetchUsers()
-      .subscribe((users: Array<UserInterface>) => this._usersStore.users$.next(users))
+      .subscribe((users: Array<UserInterface>) => this._usersStore.users$.next(users));
   }
 }

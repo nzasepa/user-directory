@@ -1,4 +1,4 @@
-<content-header-component>
+<ud-content-header-component>
   <form class="list-controls" [formGroup]="listControls">
     <div class="sort-by">
       <select formControlName="sortBy">
@@ -18,28 +18,28 @@
       <input id="search" type="text" placeholder="Search..." formControlName="search" />
     </div>
   </form>
-</content-header-component>
+</ud-content-header-component>
 
-<content-component>
-  <data-table>
-    <data-table-header>
-      <data-table-header-cell>General</data-table-header-cell>
-      <data-table-header-cell>Company</data-table-header-cell>
-      <data-table-header-cell>Registered</data-table-header-cell>
-      <data-table-header-cell>Balance</data-table-header-cell>
-    </data-table-header>
+<ud-content-component>
+  <ud-data-table>
+    <ud-data-table-header>
+      <ud-data-table-header-cell>General</ud-data-table-header-cell>
+      <ud-data-table-header-cell>Company</ud-data-table-header-cell>
+      <ud-data-table-header-cell>Registered</ud-data-table-header-cell>
+      <ud-data-table-header-cell>Balance</ud-data-table-header-cell>
+    </ud-data-table-header>
 
-    <data-table-row *ngFor="let user of usersStore.users$ | async | searchUsers: searchValue | sortUsers: sortByValue" [routerLink]="['../', user.email]">
-      <data-table-cell class="user-general">
-        <user-avatar [avatarUrl]="user.picture" [isActive]="user.isActive"></user-avatar>
+    <ud-data-table-row *ngFor="let user of usersStore.users$ | async | searchUsers: searchValue | sortUsers: sortByValue" [routerLink]="['../', user.email]">
+      <ud-data-table-cell class="user-general">
+        <ud-user-avatar [avatarUrl]="user.picture" [isActive]="user.isActive"></ud-user-avatar>
         <div class="user-meta">
           <h3>{{ user.name.first + ' ' + user.name.last }}</h3>
           <h4>{{ user.email }}</h4>
         </div>
-      </data-table-cell>
-      <data-table-cell class="user-company">{{ user.company }}</data-table-cell>
-      <data-table-cell class="user-registered">{{ user.registered }}</data-table-cell>
-      <data-table-cell class="user-balance">{{ user.balance }}</data-table-cell>
-    </data-table-row>
-  </data-table>
-</content-component>
+      </ud-data-table-cell>
+      <ud-data-table-cell class="user-company">{{ user.company }}</ud-data-table-cell>
+      <ud-data-table-cell class="user-registered">{{ user.registered }}</ud-data-table-cell>
+      <ud-data-table-cell class="user-balance">{{ user.balance }}</ud-data-table-cell>
+    </ud-data-table-row>
+  </ud-data-table>
+</ud-content-component>

@@ -7,7 +7,7 @@ import { UserInterface } from '../interfaces/user.interface';
 export class SortUsersPipe implements PipeTransform {
   transform(value: Array<UserInterface>, exponent: string): Array<UserInterface> {
     if (!Array.isArray(value)) {
-      return value
+      return value;
     }
 
     switch (exponent) {
@@ -21,10 +21,10 @@ export class SortUsersPipe implements PipeTransform {
         );
 
       case 'email':
-        return value.sort((a: UserInterface, b: UserInterface) => a.email.localeCompare(b.email))
+        return value.sort((a: UserInterface, b: UserInterface) => a.email.localeCompare(b.email));
 
       case 'company':
-        return value.sort((a: UserInterface, b: UserInterface) => a.company.localeCompare(b.company))
+        return value.sort((a: UserInterface, b: UserInterface) => a.company.localeCompare(b.company));
 
       default:
         return value;

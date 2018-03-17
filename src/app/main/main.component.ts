@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'main-component',
+  selector: 'ud-main-component',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })

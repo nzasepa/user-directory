@@ -18,12 +18,12 @@ describe('UserNotFoundComponent', () => {
         Title
       ]
     }).compileComponents();
-  }))
+  }));
 
   it('should render user not found component', async(() => {
     const fixture = TestBed.createComponent(UserNotFoundComponent);
     const component = fixture.debugElement.componentInstance;
 
     expect(component).toBeTruthy();
-  }))
+  }));
 });
