@@ -54,6 +54,6 @@ describe('UserAvatarComponent', () => {
 
     userStatus = fixture.debugElement.query(By.css('.status')).nativeElement;
 
-    expect(userStatus.className).toEqual('status inactive');
+    expect(userStatus.className).toEqual('status');
   }));
 });

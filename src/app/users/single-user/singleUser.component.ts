@@ -21,9 +21,6 @@ export class SingleUserComponent extends SubscriberComponent {
 
   private _titleService: Title;
   private _router: Router;
-  private _map: google.maps.Map;
-  private _mapMarker: google.maps.Marker;
-  private _markerInfo: google.maps.InfoWindow;
 
   constructor(router: Router, titleService: Title, activatedRoute: ActivatedRoute, usersStore: UsersStore) {
     super();
@@ -56,31 +53,34 @@ export class SingleUserComponent extends SubscriberComponent {
   private _initAddressMap(): void {
     const lat = parseFloat(this.user.latitude);
     const lng = parseFloat(this.user.longitude);
+    let map: google.maps.Map;
+    let mapMarker: google.maps.Marker;
+    let markerInfo: google.maps.InfoWindow;
     let centerPosition;
 
     if (!isNaN(lat) && !isNaN(lng)) {
       centerPosition = new google.maps.LatLng(lat, lng);
 
-      this._map = new google.maps.Map(this.mapElement.nativeElement, {
+      map = new google.maps.Map(this.mapElement.nativeElement, {
         zoom: 5,
         center: centerPosition
       });
 
-      this._mapMarker = new google.maps.Marker({
+      mapMarker = new google.maps.Marker({
         position: centerPosition,
-        map: this._map
+        map: map
       });
 
-      this._markerInfo = new google.maps.InfoWindow({
+      markerInfo = new google.maps.InfoWindow({
         content: this._markerInfoContent
       });
 
-      this._mapMarker.addListener('click', () => {
-        this._markerInfo.open(this._map, this._mapMarker);
+      mapMarker.addListener('click', () => {
+        markerInfo.open(map, mapMarker);
       });
 
-      google.maps.event.addListenerOnce(this._map, 'tilesloaded', () => {
-        this._markerInfo.open(this._map, this._mapMarker);
+      google.maps.event.addListenerOnce(map, 'tilesloaded', () => {
+        markerInfo.open(map, mapMarker);
       });
     }
   }

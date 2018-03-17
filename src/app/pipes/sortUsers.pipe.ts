@@ -10,30 +10,42 @@ export class SortUsersPipe implements PipeTransform {
       return value;
     }
 
+    const sortByName = (users: Array<UserInterface>): Array<UserInterface> => {
+      return users.sort((a: UserInterface, b: UserInterface) => {
+        return `${a.name.first} ${a.name.last}`.localeCompare(`${b.name.first} ${b.name.last}`);
+      });
+    };
+
+    const sortByStatus = (users: Array<UserInterface>): Array<UserInterface> => {
+      return new Array(
+        ...sortByName(users.filter((user: UserInterface) => user.isActive)),
+        ...sortByName(users.filter((user: UserInterface) => !user.isActive))
+      );
+    };
+
+    const sortByEmail = (users: Array<UserInterface>): Array<UserInterface> => {
+      return users.sort((a: UserInterface, b: UserInterface) => a.email.localeCompare(b.email));
+    };
+
+    const sortByCompany = (users: Array<UserInterface>): Array<UserInterface> => {
+      return users.sort((a: UserInterface, b: UserInterface) => a.company.localeCompare(b.company));
+    };
+
     switch (exponent) {
       case 'name':
-        return this._filterByName(value);
+        return sortByName(value);
 
       case 'status':
-        return new Array(
-          ...this._filterByName(value.filter((user: UserInterface) => user.isActive)),
-          ...this._filterByName(value.filter((user: UserInterface) => !user.isActive))
-        );
+        return sortByStatus(value);
 
       case 'email':
-        return value.sort((a: UserInterface, b: UserInterface) => a.email.localeCompare(b.email));
+        return sortByEmail(value);
 
       case 'company':
-        return value.sort((a: UserInterface, b: UserInterface) => a.company.localeCompare(b.company));
+        return sortByCompany(value);
 
       default:
         return value;
     }
-  }
-
-  private _filterByName(users: Array<UserInterface>): Array<UserInterface> {
-    return users.sort((a: UserInterface, b: UserInterface) => {
-      return `${a.name.first} ${a.name.last}`.localeCompare(`${b.name.first} ${b.name.last}`);
-    });
   }
 }

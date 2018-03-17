@@ -27,7 +27,6 @@ export class UsersListComponent implements OnInit {
 
   ngOnInit() {
     this._titleService.setTitle('Users list | User directory');
-
     this._initListControls();
   }
 

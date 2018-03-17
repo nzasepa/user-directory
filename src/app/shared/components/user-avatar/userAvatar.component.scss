@@ -23,12 +23,9 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  background-color: #c14747;
 
   &.active {
     background-color: #49c147;
-  }
-
-  &.inactive {
-    background-color: #c14747;
   }
 }
