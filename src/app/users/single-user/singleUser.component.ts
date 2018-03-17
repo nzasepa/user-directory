@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { SubscriberComponent } from '../../shared/components/subscriber/subscriber.component';
 import { ActivatedRoute } from '@angular/router';
 import { UsersStore } from '../users.store';
@@ -14,7 +14,7 @@ import {} from '@types/googlemaps';
   templateUrl: './singleUser.component.html',
   styleUrls: ['./singleUser.component.scss']
 })
-export class SingleUserComponent extends SubscriberComponent implements AfterViewInit {
+export class SingleUserComponent extends SubscriberComponent {
   @ViewChild('addressMap') mapElement: ElementRef
   user: UserInterface
 
@@ -36,17 +36,12 @@ export class SingleUserComponent extends SubscriberComponent implements AfterVie
     )
   }
 
-  ngAfterViewInit() {
-    if (this.user) {
-      this._initAddressMap();
-    }
-  }
-
   private _setUser(userEmail: string, users: Array<UserInterface>): void {
     this.user = users.filter((user: UserInterface) => user.email === userEmail)[0];
 
     if (this.user) {
       this._titleService.setTitle(`${this.user.name.first} ${this.user.name.last} | User directory`);
+      setTimeout(() => this._initAddressMap(), 0);
     } else {
       this._titleService.setTitle(`Not found | User directory`);
     }
@@ -89,11 +84,13 @@ export class SingleUserComponent extends SubscriberComponent implements AfterVie
     const address = user.address.split(', ').join(',<br />');
 
     return `
-      <strong>${user.name.first} ${user.name.last}</strong> (${user.company})<br />
-      email: <a href="mailto:${user.email}">${user.email}</a><br />
-      phone: <a href="tel:${user.phone}">${user.phone}</a><br />
-      <br />
-      ${address}
+      <div style="font-size: 16px;">
+        <strong>${user.name.first} ${user.name.last}</strong> (${user.company})<br />
+        email: <a href="mailto:${user.email}">${user.email}</a><br />
+        phone: <a href="tel:${user.phone}">${user.phone}</a><br />
+        <br />
+        ${address}
+      </div>
     `;
   }
 }
