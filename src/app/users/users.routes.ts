@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { UsersListComponent } from './users-list/usersList.component';
 import { UsersComponent } from './users.component';
 import { SingleUserComponent } from './single-user/singleUser.component';
+import { UserNotFoundComponent } from './user-not-found/userNotFound.component';
 
 export const usersRoutes: Routes = [
   {
@@ -16,6 +17,10 @@ export const usersRoutes: Routes = [
       {
         path: 'list',
         component: UsersListComponent
+      },
+      {
+        path: 'not-found',
+        component: UserNotFoundComponent
       },
       {
         path: ':email',

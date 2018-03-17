@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { SubscriberComponent } from '../../shared/components/subscriber/subscriber.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersStore } from '../users.store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/combineLatest';
@@ -15,35 +15,41 @@ import {} from '@types/googlemaps';
   styleUrls: ['./singleUser.component.scss']
 })
 export class SingleUserComponent extends SubscriberComponent {
-  @ViewChild('addressMap') mapElement: ElementRef
-  user: UserInterface
+  @ViewChild('addressMap') mapElement: ElementRef;
+  user: UserInterface;
+  usersFetched: boolean;
 
   private _titleService: Title;
+  private _router: Router;
   private _map: google.maps.Map;
   private _mapMarker: google.maps.Marker;
   private _markerInfo: google.maps.InfoWindow;
 
-  constructor(titleService: Title, activatedRoute: ActivatedRoute, usersStore: UsersStore) {
+  constructor(router: Router, titleService: Title, activatedRoute: ActivatedRoute, usersStore: UsersStore) {
     super();
 
     this._titleService = titleService;
+    this._router = router;
 
     this.subscriptions.push(
       Observable.combineLatest(
         activatedRoute.params.map((param) => param.email),
         usersStore.users$
-      ).subscribe(([userEmail, users]) => this._setUser(userEmail, users))
+      )
+      .filter((values) => values.every(Boolean))
+      .subscribe(([userEmail, users]) => this._setUser(userEmail, users))
     )
   }
 
   private _setUser(userEmail: string, users: Array<UserInterface>): void {
     this.user = users.filter((user: UserInterface) => user.email === userEmail)[0];
+    this.usersFetched = true;
 
     if (this.user) {
       this._titleService.setTitle(`${this.user.name.first} ${this.user.name.last} | User directory`);
       setTimeout(() => this._initAddressMap(), 0);
     } else {
-      this._titleService.setTitle(`Not found | User directory`);
+     this._router.navigate(['/users', 'not-found']);
     }
   }
 

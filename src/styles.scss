@@ -9,11 +9,28 @@ body {
 }
 
 a {
+  text-decoration: none;
   color: #0089da;
   transition: color .2s ease-in-out;
 
+  &.icon-link {
+    svg {
+      height: 13px;
+      width: 13px;
+      margin-right: 5px;
+      fill: #0189da;
+      transition: fill .2s ease-in-out;
+    }
+  }
+
   &:hover {
     color: #3bb6ff;
+
+    &.icon-link {
+      svg {
+        fill: #3bb6ff;
+      }
+    }
   }
 }
 

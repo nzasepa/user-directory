@@ -8,6 +8,7 @@ import { DataTableHeaderComponent } from './components/data-table/data-table-hea
 import { DataTableCellComponent } from './components/data-table/data-table-cell/dataTableCell.component';
 import { DataTableHeaderCellComponent } from './components/data-table/data-table-header-cell/dataTableHeaderCell.component';
 import { UserAvatarComponent } from './components/user-avatar/userAvatar.component';
+import { ContentHeaderComponent } from './components/content-header/contentHeader.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { UserAvatarComponent } from './components/user-avatar/userAvatar.compone
   declarations: [
     SubscriberComponent,
     ContentComponent,
+    ContentHeaderComponent,
     DataTableComponent,
     DataTableRowComponent,
     DataTableHeaderComponent,
@@ -26,6 +28,7 @@ import { UserAvatarComponent } from './components/user-avatar/userAvatar.compone
   exports: [
     SubscriberComponent,
     ContentComponent,
+    ContentHeaderComponent,
     DataTableComponent,
     DataTableRowComponent,
     DataTableHeaderComponent,

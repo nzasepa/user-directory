@@ -8,12 +8,14 @@ import { UsersComponent } from './users.component';
 import { UsersListComponent } from './users-list/usersList.component';
 import { SharedModule } from '../shared/shared.module';
 import { SingleUserComponent } from './single-user/singleUser.component';
+import { UserNotFoundComponent } from './user-not-found/userNotFound.component';
 
 @NgModule({
   declarations: [
     UsersComponent,
     UsersListComponent,
-    SingleUserComponent
+    SingleUserComponent,
+    UserNotFoundComponent
   ],
   imports: [
     CommonModule,

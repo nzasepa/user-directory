@@ -4,9 +4,9 @@ import { UserInterface } from '../interfaces/user.interface';
 
 @Injectable()
 export class UsersStore {
-  users$: BehaviorSubject<Array<UserInterface>>
+  users$: BehaviorSubject<Array<UserInterface>>;
 
   constructor() {
-    this.users$ = new BehaviorSubject<Array<UserInterface>>(new Array())
+    this.users$ = new BehaviorSubject<Array<UserInterface>>(null)
   }
 }
