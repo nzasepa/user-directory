@@ -1,6 +1,6 @@
-<ud-main-component>
+<ud-main-component [sidebarOpen]="sidebarOpen">
   <aside>
-    <ud-users-list></ud-users-list>
+    <ud-users-list (userSelected)="onUserSelected($event)"></ud-users-list>
   </aside>
 
   <router-outlet></router-outlet>

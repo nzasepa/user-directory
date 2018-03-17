@@ -1,8 +1,17 @@
 :host {
   display: block;
   width: 350px;
+  margin-left: 0;
   background-color: #342f3a;
-}
+  z-index: 100;
+  transition: margin-left .2s ease-in-out;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    width: 100%;
+    margin-left: -100%;
+  }
+} 
 
 .logo {
   padding: 30px 15px;

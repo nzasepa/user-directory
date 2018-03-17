@@ -1,6 +1,7 @@
 :host {
   display: block;
-  width: 1000px;
+  max-width: 1000px;
+  width: calc(100% - 60px);
   margin: 0 auto;
   border: 1px solid #ddd;
   background-color: #ffffff;

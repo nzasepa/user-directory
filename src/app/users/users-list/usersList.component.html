@@ -11,6 +11,7 @@
 
 <ul class="users-list">
   <li *ngFor="let user of usersStore.users$ | async | searchUsers: searchValue | sortUsers: 'status'" 
+      (click)="onUserSelected($event, user)"
       [routerLink]="['/users', user.email]"
       routerLinkActive="active">
     <div class="user-general">
