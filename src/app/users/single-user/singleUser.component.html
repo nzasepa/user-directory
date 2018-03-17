@@ -3,9 +3,70 @@
 </content-component>
 
 <ng-template #userProfile>
-  {{ user.email }}
+  <div class="user-profile">
+    <header>
+      <user-avatar [avatarUrl]="user.picture" [isActive]="user.isActive"></user-avatar>
+      <h3>{{ user.name.first + ' ' + user.name.last }} <span>({{ user.company }})</span></h3>
+    </header>
+    <div class="content">
+      <div class="details">
+        <p class="about">{{ user.about }}</p>
+
+        <table class="balance">
+          <tbody>
+            <tr>
+              <th>Balance</th>
+              <td>{{ user.balance }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="registered">Registered: {{ user.registered }}</p>
+        <ul class="tags">
+          <li *ngFor="let tag of user.tags">{{ tag }}</li>
+        </ul>
+        
+        <h4 class="heading">Additional Information</h4>
+        <table class="additional-information">
+          <tbody>
+            <tr>
+              <th>Age</th>
+              <td>{{ user.age }}</td>
+            </tr>
+            <tr>
+              <th>Eye color</th>
+              <td>{{ user.eyeColor }}</td>
+            </tr>
+            <tr>
+              <th>Favorite fruit</th>
+              <td>{{ user.favoriteFruit }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 class="heading">Friends</h4>
+        <table class="friends">
+          <tbody>
+            <tr *ngFor="let friend of user.friends">
+              <td>{{ friend.name }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="address">
+        <div #addressMap class="map"></div>
+      </div>
+    </div>
+  </div>
 </ng-template>
 
 <ng-template #userNotFound>
-  Not found
+  <div class="not-found">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.667 426.667">
+      <path d="M124.16 213.333l22.613-22.613 22.614 22.613L192 190.72l-22.613-22.613L192 145.493l-22.613-22.72-22.614 22.72-22.613-22.72-22.72 22.72 22.72 22.614-22.72 22.613zM213.333 256c-49.707 0-91.947 31.147-109.013 74.667h218.027C305.28 287.147 263.04 256 213.333 256zM302.507 122.773l-22.614 22.72-22.613-22.72-22.613 22.72 22.613 22.614-22.613 22.613 22.613 22.613 22.613-22.613 22.614 22.613 22.72-22.613-22.72-22.613 22.72-22.614z"/>
+      <path d="M213.227 0C95.36 0 0 95.467 0 213.333s95.36 213.333 213.227 213.333 213.44-95.467 213.44-213.333S331.093 0 213.227 0zm.106 384c-94.293 0-170.667-76.373-170.667-170.667S119.04 42.667 213.333 42.667 384 119.04 384 213.333 307.627 384 213.333 384z"/>
+    </svg>
+    <h2>User Not Found</h2>
+    <a [routerLink]="['/users', 'list']">Go back</a>
+  </div>
 </ng-template>
