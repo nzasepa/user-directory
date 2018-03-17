@@ -1,3 +1,5 @@
+@import '../../../assets/scss/mixins.scss';
+
 content-header-component {
   height: 40px;
   margin-top: 60px;
@@ -6,6 +8,51 @@ content-header-component {
 content-component {
   margin-top: 15px;
   margin-bottom: 80px;
+}
+
+.list-controls {
+  @include clearfix();
+
+  .sort-by {
+    float: left;
+    line-height: 40px;
+  }
+
+  .search {
+    position: relative;
+    float: right;
+    height: 40px;
+    width: 250px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+
+    label {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    input {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: calc(100% - 40px);
+      margin: 0;
+      padding: 0 5px 0 0;
+      line-height: 38px;
+      border: none;
+      box-shadow: none;
+      outline: none;
+    }
+  }
 }
 
 data-table-row {
