@@ -9,6 +9,8 @@ import { UsersListComponent } from './users-list/usersList.component';
 import { SharedModule } from '../shared/shared.module';
 import { SingleUserComponent } from './single-user/singleUser.component';
 import { UserNotFoundComponent } from './user-not-found/userNotFound.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { UserNotFoundComponent } from './user-not-found/userNotFound.component';
   imports: [
     CommonModule,
     RouterModule.forChild(usersRoutes),
+    ReactiveFormsModule,
+    PipesModule,
     SharedModule
   ]
 })

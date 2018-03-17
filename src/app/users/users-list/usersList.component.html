@@ -1,5 +1,18 @@
 <content-header-component>
-  Hello
+  <form class="list-controls" [formGroup]="listControls">
+    <div class="sort-by">
+      <select formControlName="sortBy">
+        <option value="status">Status</option>
+        <option value="name">Name</option>
+        <option value="email">Email</option>
+        <option value="company">Company</option>
+      </select>
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="Search..." formControlName="search" />
+    </div>
+  </form>
 </content-header-component>
 
 <content-component>
@@ -11,7 +24,7 @@
       <data-table-header-cell>Balance</data-table-header-cell>
     </data-table-header>
 
-    <data-table-row *ngFor="let user of usersStore.users$ | async" [routerLink]="['../', user.email]">
+    <data-table-row *ngFor="let user of usersStore.users$ | async | searchUsers: searchValue | sortUsers: sortByValue" [routerLink]="['../', user.email]">
       <data-table-cell class="user-general">
         <user-avatar [avatarUrl]="user.picture" [isActive]="user.isActive"></user-avatar>
         <div class="user-meta">
