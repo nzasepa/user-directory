@@ -4,6 +4,7 @@ import { UsersService } from './users.service';
 import { UserInterface } from '../interfaces/user.interface';
 
 @Component({
+  selector: 'users-component',
   template: `
     <router-outlet></router-outlet>
   `
