@@ -1,20 +1,12 @@
-ud-content-header-component {
-  height: 40px;
-  margin-top: 60px;
-
-  a {
-    display: inline-block;
-    margin-left: -10px;
-    padding: 0 10px;
-    font-size: 18px;
-    line-height: 40px;
-  }
-}
-
 ud-content-component {
-  margin-top: 15px;
+  margin-top: 50px;
   margin-bottom: 80px;
   padding: 60px 30px;
+
+  @media (max-width: 768px) {
+    margin-top: 60px;
+    padding: 40px 15px;
+  }
 }
 
 .not-found {

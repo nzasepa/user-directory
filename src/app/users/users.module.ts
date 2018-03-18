@@ -11,6 +11,7 @@ import { SingleUserComponent } from './single-user/singleUser.component';
 import { UserNotFoundComponent } from './user-not-found/userNotFound.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PipesModule } from '../pipes/pipes.module';
+import { MainModule } from '../main/main.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PipesModule } from '../pipes/pipes.module';
     CommonModule,
     RouterModule.forChild(usersRoutes),
     ReactiveFormsModule,
+    MainModule,
     PipesModule,
     SharedModule
   ]

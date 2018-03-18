@@ -4,16 +4,26 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { UsersService } from './users.service';
 import { UsersStore } from './users.store';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { UsersListComponent } from './users-list/usersList.component';
+import { MainModule } from '../main/main.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PipesModule } from '../pipes/pipes.module';
+import { SharedModule } from '../shared/shared.module';
 
 describe('UsersComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        ReactiveFormsModule,
+        MainModule,
+        PipesModule,
+        SharedModule
       ],
       declarations: [
-        UsersComponent
+        UsersComponent,
+        UsersListComponent
       ],
       providers: [
         UsersService,

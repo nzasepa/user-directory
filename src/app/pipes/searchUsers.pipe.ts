@@ -10,10 +10,11 @@ export class SearchUsersPipe implements PipeTransform {
       return value;
     }
 
+    const lowerCaseExponent = exponent.toLocaleLowerCase();
+
     return value.filter((user: UserInterface) => (
-      `${user.name.first} ${user.name.last}`.indexOf(exponent) > -1 ||
-      user.email.indexOf(exponent) > -1 ||
-      user.company.indexOf(exponent) > -1
+      `${user.name.first} ${user.name.last}`.toLocaleLowerCase().indexOf(lowerCaseExponent) > -1 ||
+      user.email.toLocaleLowerCase().indexOf(lowerCaseExponent) > -1
     ));
   }
 }

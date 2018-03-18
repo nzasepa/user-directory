@@ -16,6 +16,9 @@ describe('MainComponent', () => {
     const fixture = TestBed.createComponent(MainComponent);
     const component = fixture.debugElement.componentInstance;
 
+    component.sidebarOpen = false;
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
   }));
 });

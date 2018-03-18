@@ -1,39 +1,29 @@
 @import '../../../assets/scss/mixins.scss';
 
-ud-content-header-component {
-  height: 40px;
-  margin-top: 60px;
+ud-content-component {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  padding: 30px;
 
-  a {
-    display: inline-block;
-    margin-left: -10px;
-    padding: 0 10px;
-    font-size: 18px;
-    line-height: 40px;
+  @media (max-width: 768px) {
+    margin-top: 60px;
+    padding: 15px;
   }
 }
 
-ud-content-component {
-  margin-top: 15px;
-  margin-bottom: 80px;
-  padding: 30px;
-}
-
 header {
+  position: relative;
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #ddd;
 
-  @include clearfix();
-
   ud-user-avatar {
-    float: left;
+    position: absolute;
   }
 
   h3 {
-    float: left;
     margin: 0;
-    margin-left: 15px;
+    margin-left: 45px;
     font-size: 25px;
 
     span {
@@ -56,6 +46,20 @@ header {
 
     &:last-of-type {
       padding-left: 15px;
+    }
+
+    @media (max-width: 1200px) {
+      float: none;
+      width: 100%;
+
+      &:first-of-type {
+        padding-right: 0;
+      }
+      
+      &:last-of-type {
+        margin-top: 30px;
+        padding-left: 0;
+      }
     }
   }
 }

@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UsersStore } from '../users.store';
 import { UserInterface } from '../../interfaces/user.interface';
 import 'rxjs/add/operator/filter';
 import { Title } from '@angular/platform-browser';
-
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -12,6 +11,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./usersList.component.scss']
 })
 export class UsersListComponent implements OnInit {
+  @Output() userSelected: EventEmitter<boolean>;
+
   listControls: FormGroup;
   usersStore: UsersStore;
 
@@ -19,6 +20,7 @@ export class UsersListComponent implements OnInit {
   private _formBuilder: FormBuilder;
 
   constructor(titleService: Title, formBuilder: FormBuilder, usersStore: UsersStore) {
+    this.userSelected = new EventEmitter<boolean>();
     this.usersStore = usersStore;
 
     this._titleService = titleService;
@@ -30,17 +32,17 @@ export class UsersListComponent implements OnInit {
     this._initListControls();
   }
 
-  get sortByValue(): string {
-    return this.listControls.get('sortBy').value;
-  }
-
   get searchValue(): string {
     return this.listControls.get('search').value;
   }
 
+  onUserSelected($event: MouseEvent): void {
+    $event.preventDefault();
+    this.userSelected.emit(true);
+  }
+
   private _initListControls(): void {
     this.listControls = this._formBuilder.group({
-      sortBy: ['status'],
       search: ['']
     });
   }
