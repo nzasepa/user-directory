@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  max-width: 1000px;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  background-color: #ffffff;
+
+  @media (max-width: 768px) {
+    width: calc(100% - 30px);
+  }
+}

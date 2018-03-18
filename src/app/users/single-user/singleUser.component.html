@@ -1,0 +1,57 @@
+<ud-content-component>
+  <div *ngIf="user" class="user-profile">
+    <header>
+      <ud-user-avatar [avatarUrl]="user.picture" [isActive]="user.isActive"></ud-user-avatar>
+      <h3>{{ user.name.first + ' ' + user.name.last }} <span>({{ user.company }})</span></h3>
+    </header>
+    <div class="content">
+      <div class="details">
+        <p class="about">{{ user.about }}</p>
+
+        <table class="balance">
+          <tbody>
+            <tr>
+              <th>Balance</th>
+              <td>{{ user.balance }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="registered">Registered: {{ user.registered }}</p>
+        <ul class="tags">
+          <li *ngFor="let tag of user.tags">{{ tag }}</li>
+        </ul>
+        
+        <h4 class="heading">Additional Information</h4>
+        <table class="additional-information">
+          <tbody>
+            <tr>
+              <th>Age</th>
+              <td>{{ user.age }}</td>
+            </tr>
+            <tr>
+              <th>Eye color</th>
+              <td>{{ user.eyeColor }}</td>
+            </tr>
+            <tr>
+              <th>Favorite fruit</th>
+              <td>{{ user.favoriteFruit }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 class="heading">Friends</h4>
+        <table class="friends">
+          <tbody>
+            <tr *ngFor="let friend of user.friends">
+              <td>{{ friend.name }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="address">
+        <div #addressMap class="map"></div>
+      </div>
+    </div>
+  </div>
+</ud-content-component>

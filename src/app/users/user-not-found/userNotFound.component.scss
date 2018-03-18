@@ -1,0 +1,24 @@
+ud-content-component {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  padding: 60px 30px;
+
+  @media (max-width: 768px) {
+    margin-top: 60px;
+    padding: 40px 15px;
+  }
+}
+
+.not-found {
+  text-align: center;
+
+  svg {
+    width: 150px; 
+    height: 150px;
+  }
+
+  h2 {
+    margin: 20px 0 0;
+    font-size: 40px;
+  }
+}

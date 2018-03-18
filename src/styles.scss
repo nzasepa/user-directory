@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  color: #0089da;
+  transition: color .2s ease-in-out;
+
+  &.icon-link {
+    svg {
+      height: 13px;
+      width: 13px;
+      margin-right: 5px;
+      fill: #0189da;
+      transition: fill .2s ease-in-out;
+    }
+  }
+
+  &:hover {
+    color: #3bb6ff;
+
+    &.icon-link {
+      svg {
+        fill: #3bb6ff;
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  td, th {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  tr:last-child {
+    th, td {
+      border-bottom: 0;
+    }
+  }
+}

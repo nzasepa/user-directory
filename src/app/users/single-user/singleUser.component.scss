@@ -1,0 +1,140 @@
+@import '../../../assets/scss/mixins.scss';
+
+ud-content-component {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  padding: 30px;
+
+  @media (max-width: 768px) {
+    margin-top: 60px;
+    padding: 15px;
+  }
+}
+
+header {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+
+  ud-user-avatar {
+    position: absolute;
+  }
+
+  h3 {
+    margin: 0;
+    margin-left: 45px;
+    font-size: 25px;
+
+    span {
+      font-weight: 400;
+    }
+  }
+}
+
+.content {
+  @include clearfix();
+
+  > div {
+    float: left;
+    width: 50%;
+    min-height: 1px;
+
+    &:first-of-type {
+      padding-right: 15px;
+    }
+
+    &:last-of-type {
+      padding-left: 15px;
+    }
+
+    @media (max-width: 1200px) {
+      float: none;
+      width: 100%;
+
+      &:first-of-type {
+        padding-right: 0;
+      }
+      
+      &:last-of-type {
+        margin-top: 30px;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.about {
+  margin: 0 0 10px;
+}
+
+.balance {
+  margin-bottom: 20px;
+
+  th {
+    font-size: 20px;
+  }
+
+  td {
+    text-align: right;
+    font-size: 30px;
+  }
+}
+
+.registered {
+  margin: 0 0 5px;
+  font-size: 12px;
+}
+
+.tags {
+  margin: 10px 0 15px;
+  padding: 0;
+
+  @include clearfix();
+
+  li {
+    float: left;
+    display: block;
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    background-color: #ddd;
+    list-style: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.heading {
+  position: relative;
+  margin: 30px 0 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  color: #3e83a5;
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: rgba(62, 131, 165, 0.1);
+  }
+}
+
+.additional-information {
+  th {
+    width: 30%;
+  }
+}
+
+.address {
+  .map {
+    height: 400px;
+  }
+}

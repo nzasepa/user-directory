@@ -1,0 +1,27 @@
+:host {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+    clear: both;
+  }
+}
+
+ud-sidebar-component {
+  float: left;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  float: left;
+  height: 100vh;
+  width: calc(100% - 350px);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    float: none;
+    width: 100%;
+  }
+}
